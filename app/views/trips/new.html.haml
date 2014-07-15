@@ -7,7 +7,7 @@
 %button.plane_b Plane
 
 
-= form_tag(method: 'post') do
+= form_tag("/trips", method: 'post') do
 	%ul
 		%li.transport.car
 			= label_tag("hours", "Length of flight: ")

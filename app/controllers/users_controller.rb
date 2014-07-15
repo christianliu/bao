@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    if User.find_by(email: user_params[:email]) != nil
+    if User.find_by(email: user_params[:email])
       @user = User.find_by(email: user_params[:email])
       @user.update_attributes(name: user_params[:name])
       flash[:success] = "Welcome back, " + user_params[:name] + "!"
