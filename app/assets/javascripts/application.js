@@ -14,20 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-
-    // } else if ( <%= User.find_by(email: user_email).to_json %> != nil) {
-    // 	<%= User.find_by(email: user_email).update_attributes()to_json %> = user_name;
-    // 	reponse = "Welcome back, " + user_name + "!";
-    // 	showLink();
-    // // New User
-    // } else {
-    // 	User.create(email: user_email, name: user_name);
-    // 	response = "Hello, " + user_name + "!";
-    // 	showLink();
-    // }
 	
-
+// EVENT/SHOW page
 function verifyEmail(){
 	var user_name = $("#user_name").val();
 	var user_email = $("#user_email").val();
@@ -40,40 +28,21 @@ function verifyEmail(){
 	// Verify name field isn't blank
 	if(user_name == null || user_name == "") {
 		response = "Please tell us your name.";
+		$(".next").hide();
 	// Verify email valid
 	} else if(atpos< 1 || dotpos<atpos+2 || dotpos+2>=user_email.length) {
         response = "Please enter your valid email address.";
+        $(".next").hide();
     // Old User
     } else {
-		response = "Go!";
+		$(".next").show();
 	}
 
 	$("#user_response").text(response);
 }
 
-// EVENT/SHOW page
 $(document).ready(function() {
+	$(".next").hide();
 	$("#user_name").keyup(verifyEmail);
 	$("#user_email").keyup(verifyEmail);
-});
-
-
-// TRIP/NEW page
-$(document).ready(function() {
-	// hide form fields
-	$(".transport").hide();
-	
-	// toggle on button click
-	$(".car_b").click(function(){
-		$(".car").slideToggle();
-	});
-	$(".bus_b").click(function(){
-		$(".bus").slideToggle();
-	});
-	$(".train_b").click(function(){
-		$(".train").slideToggle();
-	});
-	$(".plane_b").click(function(){
-		$(".plane").slideToggle();
-	});
 });

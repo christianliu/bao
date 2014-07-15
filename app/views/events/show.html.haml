@@ -8,6 +8,7 @@
 				= f.text_field(:name, autofocus: true, placeholder: 'Name')
 			%li
 				= f.email_field(:email, placeholder: 'Email')
+			%p#user_response
+			%li.next
+				= f.submit("Enter information >>", class: "button")
 
-	%p#user_response
-	=link_to("Enter information >>", new_trip_path)

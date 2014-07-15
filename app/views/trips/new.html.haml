@@ -1,3 +1,5 @@
+.notice= flash[:success]
+
 %p How are you getting there?
 %button.car_b Car
 %button.bus_b Truck/Bus
@@ -22,4 +24,12 @@
 		%li
 			= submit_tag "Go"
 
-%script 
+%script
+	// hide form fields
+	$(".transport").hide();
+	
+	// toggle on button click
+	$(".car_b").click(function(){ $(".car").slideToggle(); });
+	$(".bus_b").click(function(){ $(".bus").slideToggle(); });
+	$(".train_b").click(function(){ $(".train").slideToggle(); });
+	$(".plane_b").click(function(){ $(".plane").slideToggle(); });
