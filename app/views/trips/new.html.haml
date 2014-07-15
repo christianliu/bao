@@ -7,16 +7,16 @@
 
 = form_tag(method: 'post') do
 	%ul
-		%li.car
+		%li.transport.car
 			= label_tag("hours", "Length of flight: ")
 			= number_field_tag("hours", step: 0.5)
-		%li.bus
+		%li.transport.bus
 			= label_tag("hours", "Length of flight: ")
 			= number_field_tag("hours", step: 0.5)
-		%li.train
+		%li.transport.train
 			= label_tag("hours", "Length of flight: ")
 			= number_field_tag("hours", step: 0.5)
-		%li.plane
+		%li.transport.plane
 			= label_tag("hours", "Length of flight: ")
 			= number_field_tag("hours", step: 0.5)
 		%li

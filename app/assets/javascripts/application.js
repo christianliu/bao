@@ -16,56 +16,64 @@
 //= require_tree .
 
 
-// 
-
-
-$(document).ready(function() {
-	$("li").hide();
+    // } else if ( <%= User.find_by(email: user_email).to_json %> != nil) {
+    // 	<%= User.find_by(email: user_email).update_attributes()to_json %> = user_name;
+    // 	reponse = "Welcome back, " + user_name + "!";
+    // 	showLink();
+    // // New User
+    // } else {
+    // 	User.create(email: user_email, name: user_name);
+    // 	response = "Hello, " + user_name + "!";
+    // 	showLink();
+    // }
 	
-	$(".car_b").click(function(){
-		$(".car").slideToggle()
-	});
-	$(".bus_b").click(function(){
-		$(".bus").slideToggle()
-	});
-	$(".train_b").click(function(){
-		$(".train").slideToggle()
-	});
-	$(".plane_b").click(function(){
-		$(".plane").slideToggle()
-	});
-	
-});
 
-function verifyEmail() {
-	var user_name = document.getElementById("user_name");
-	var user_email = document.getElementById("user_email");
+function verifyEmail(){
+	var user_name = $("#user_name").val();
+	var user_email = $("#user_email").val();
 	var response = "";
 	
+	// variables to check email validity 
 	var atpos = user_email.indexOf("@");
     var dotpos = user_email.lastIndexOf(".");
-	
+
 	// Verify name field isn't blank
-	if (user_name == nil || user_name == "") {
+	if(user_name == null || user_name == "") {
 		response = "Please tell us your name.";
 	// Verify email valid
-	} else {
+	} else if(atpos< 1 || dotpos<atpos+2 || dotpos+2>=user_email.length) {
+        response = "Please enter your valid email address.";
+    // Old User
+    } else {
 		response = "Go!";
 	}
 
-	// if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=user_email.length) {
- //        response = "Please check your email address.";
- //    // Old User
- //    } else if ( <%= User.find_by(email: user_email).to_json %> != nil) {
- //    	<%= User.find_by(email: user_email).update_attributes()to_json %> = user_name;
- //    	reponse = "Welcome back, " + user_name + "!";
- //    	showLink();
- //    // New User
- //    } else {
- //    	User.create(email: user_email, name: user_name);
- //    	response = "Hello, " + user_name + "!";
- //    	showLink();
- //    }
-	
-	user_response.innerHTML = response;
+	$("#user_response").text(response);
 }
+
+// EVENT/SHOW page
+$(document).ready(function() {
+	$("#user_name").keyup(verifyEmail);
+	$("#user_email").keyup(verifyEmail);
+});
+
+
+// TRIP/NEW page
+$(document).ready(function() {
+	// hide form fields
+	$(".transport").hide();
+	
+	// toggle on button click
+	$(".car_b").click(function(){
+		$(".car").slideToggle();
+	});
+	$(".bus_b").click(function(){
+		$(".bus").slideToggle();
+	});
+	$(".train_b").click(function(){
+		$(".train").slideToggle();
+	});
+	$(".plane_b").click(function(){
+		$(".plane").slideToggle();
+	});
+});
