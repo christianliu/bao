@@ -15,6 +15,28 @@
 //= require turbolinks
 //= require_tree .
 
+
+// 
+
+
+$(document).ready(function() {
+	$("li").hide();
+	
+	$(".car_b").click(function(){
+		$(".car").slideToggle()
+	});
+	$(".bus_b").click(function(){
+		$(".bus").slideToggle()
+	});
+	$(".train_b").click(function(){
+		$(".train").slideToggle()
+	});
+	$(".plane_b").click(function(){
+		$(".plane").slideToggle()
+	});
+	
+});
+
 function verifyEmail() {
 	var user_name = document.getElementById("user_name");
 	var user_email = document.getElementById("user_email");

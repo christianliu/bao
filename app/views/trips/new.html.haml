@@ -1,0 +1,25 @@
+%p How are you getting there?
+%button.car_b Car
+%button.bus_b Truck/Bus
+%button.train_b Train
+%button.plane_b Plane
+
+
+= form_tag(method: 'post') do
+	%ul
+		%li.car
+			= label_tag("hours", "Length of flight: ")
+			= number_field_tag("hours", step: 0.5)
+		%li.bus
+			= label_tag("hours", "Length of flight: ")
+			= number_field_tag("hours", step: 0.5)
+		%li.train
+			= label_tag("hours", "Length of flight: ")
+			= number_field_tag("hours", step: 0.5)
+		%li.plane
+			= label_tag("hours", "Length of flight: ")
+			= number_field_tag("hours", step: 0.5)
+		%li
+			= submit_tag "Go"
+
+%script 
