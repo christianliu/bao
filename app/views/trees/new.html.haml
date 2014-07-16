@@ -1,15 +1,20 @@
 #container
-	%p 
-		I will donate $
-		%input.inline{type: "text", name: "amount", class: "number donate_money"}
-		toward
+	%h1 Give a tree
 
-		= form_for @tree do |f|
-			= f.number_field(:name, class: "inline number donate_tree", placeholder: '5')
-			%p trees.
-			= f.submit("Donate", class: "button")
+	= form_for @tree do |f|
+		%p 
+			I will donate $
+			%input.inline{type: "number", name: "amount", class: "donate_money", placeholder: '24'}
+			toward
+			= f.number_field(:name, class: "donate_tree", placeholder: '2')
+			trees.
+		= f.submit("Donate", class: "button")
 
 %script
-	$(".donate_money").keyup(function() {
-	$(".donate_tree").text( "hello" );
+	$(".donate_money").bind("keyup paste", function() {
+	$(".donate_tree").val( $(this).val() / 12);
+	});
+
+	$(".donate_tree").bind("keyup paste", function() {
+	$(".donate_money").val( $(this).val() * 12);
 	});

@@ -32,7 +32,7 @@ function verifyEmail(){
         $("#email_input_response").html('Please enter your valid email address.');
     // Old User
     } else {
-    	$("#email_input_response").html('<input class="button" name="commit" type="submit" value="Enter information >>">');
+    	$("#email_input_response").html('<input class="button" name="commit" type="submit" value="Get Started >>">');
 	}
 
 }

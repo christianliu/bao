@@ -40,7 +40,6 @@ p {
 
 a {
 	text-decoration: none;
-	font-family: 'Roboto', sans-serif;
 }
 
 ul {
@@ -49,12 +48,10 @@ ul {
 }
 
 span {
-	font-family: 'Roboto', sans-serif;
 	font-size: 35px;
 }
 
 input {
-	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 	font-size: 35px;
 	padding-left: 15px;
@@ -62,17 +59,17 @@ input {
 	background: #fff;
 }
 
-input.number {
-	width: 85px;
+input[type=number] {
+	width: 90px;
 }
 
 .button {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	font-size: 16px;
+	font-family: 'Arvo', serif;
+	font-size: 25px;
 	cursor: pointer;
 	border: none;
 	text-decoration:none;
+	margin-top: 25px
 }
 .button:active {
 	position:relative;
