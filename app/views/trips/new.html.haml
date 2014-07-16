@@ -28,8 +28,8 @@
 				%li= number_field_tag("train_km", step: 0.5)
 		.transport.plane
 			%ul.question
-				%li= label_tag("hours", "Length of flight: ")
-				%li= number_field_tag("hours", step: 0.5)
+				%li= label_tag("plane_hours", "Length of flight: ")
+				%li= number_field_tag("plane_hours", step: 0.5)
 		%div
 			= hidden_field_tag("user_id", nil, value: params[:user_id])
 			= hidden_field_tag("event_id", nil, value: params[:event_id])

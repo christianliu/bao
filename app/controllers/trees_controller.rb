@@ -4,7 +4,9 @@ class TreesController < ApplicationController
   end
 
   def create
-  	@tree = Tree.create(tree_params)
+    @tree = Tree.create(tree_params)
+
+    redirect_to new_trip_path(user_id: @user.id, event_id: params[:user][:event_id])
   end
 
   private
