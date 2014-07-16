@@ -1,4 +1,4 @@
-#show_text
+#container
 	%h1= @event.name
 	%p= @event.about
 	
@@ -8,7 +8,7 @@
 				= f.text_field(:name, autofocus: true, placeholder: 'Name')
 			%li
 				= f.email_field(:email, placeholder: 'Email')
-			%p#user_response
-			%li.next
-				= f.submit("Enter information >>", class: "button")
+			%li
+				= f.hidden_field(:event_id, value: params[:id])
+			#email_input_response
 

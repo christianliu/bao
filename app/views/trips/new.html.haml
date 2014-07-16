@@ -1,35 +1,44 @@
-.notice= flash[:success]
+#container
+	.notice= flash[:success]
 
-%p How are you getting there?
-%button.car_b Car
-%button.bus_b Truck/Bus
-%button.train_b Train
-%button.plane_b Plane
+	%p How are you getting there?
+	%button.transport_button.car_b Car
+	%button.transport_button.bus_b Truck/Bus
+	%button.transport_button.train_b Train
+	%button.transport_button.plane_b Plane
 
 
-= form_tag("/trips", method: 'post') do
-	%ul
-		%li.transport.car
-			= label_tag("hours", "Length of flight: ")
-			= number_field_tag("hours", step: 0.5)
-		%li.transport.bus
-			= label_tag("hours", "Length of flight: ")
-			= number_field_tag("hours", step: 0.5)
-		%li.transport.train
-			= label_tag("hours", "Length of flight: ")
-			= number_field_tag("hours", step: 0.5)
-		%li.transport.plane
-			= label_tag("hours", "Length of flight: ")
-			= number_field_tag("hours", step: 0.5)
-		%li
-			= submit_tag "Go"
+	= form_tag("/trips", method: 'post') do
+		%ul
+			%li.transport.car
+				= label_tag("car_km", "Kilometers travelled by car: ")
+				= number_field_tag("car_km", step: 0.5)
+				%br
+				= label_tag("car_people", "Number of people in the car: ")
+				= number_field_tag("car_people", step: 0.5)
+			%li.transport.bus
+				= label_tag("bus_km", "Kilometers travelled by bus: ")
+				= number_field_tag("bus_km", step: 0.5)
+				%br
+				= label_tag("bus_people", "Number of people in the bus: ")
+				= number_field_tag("bus_people", step: 0.5)
+			%li.transport.train
+				= label_tag("train_km", "Kilometers travelled by train: ")
+				= number_field_tag("train_km", step: 0.5)
+			%li.transport.plane
+				= label_tag("hours", "Length of flight: ")
+				= number_field_tag("hours", step: 0.5)
+			%li
+				= hidden_field_tag("user_id", nil, value: params[:user_id])
+				= hidden_field_tag("event_id", nil, value: params[:event_id])
+				= submit_tag("Go", class: "button")
 
-%script
-	// hide form fields
-	$(".transport").hide();
-	
-	// toggle on button click
-	$(".car_b").click(function(){ $(".car").slideToggle(); });
-	$(".bus_b").click(function(){ $(".bus").slideToggle(); });
-	$(".train_b").click(function(){ $(".train").slideToggle(); });
-	$(".plane_b").click(function(){ $(".plane").slideToggle(); });
+	%script
+		// hide form fields
+		$(".transport").hide();
+		
+		// toggle on button click
+		$(".car_b").click(function(){ $(".car").slideToggle(); });
+		$(".bus_b").click(function(){ $(".bus").slideToggle(); });
+		$(".train_b").click(function(){ $(".train").slideToggle(); });
+		$(".plane_b").click(function(){ $(".plane").slideToggle(); });

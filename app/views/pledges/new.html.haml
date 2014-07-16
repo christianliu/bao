@@ -1,0 +1,10 @@
+#container
+	%h1 Make a pledge
+
+	= form_for @pledge do |f|
+		%ul
+			%li
+				= f.text_area(:about, placeholder: 'By November 18th, 2014, I pledge to plant 10 trees and...')
+			%li
+				= f.hidden_field(:user_id, value: params[:id])
+				= f.submit("I promise!", class: "button")

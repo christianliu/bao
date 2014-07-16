@@ -1,1 +1,9 @@
-%h1 HELLLOOOOOO
+#container
+	%p 
+		We recommend that you donate 
+		%span $#{@amount}
+		to compensate for your travels.
+
+	=link_to("Give a tree", new_tree_path)
+	%br
+	=link_to("Make a pledge", new_pledge_path)

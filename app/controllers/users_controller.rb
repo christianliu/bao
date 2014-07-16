@@ -6,16 +6,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    if User.find_by(email: user_params[:email])
-      @user = User.find_by(email: user_params[:email])
-      @user.update_attributes(name: user_params[:name])
-      flash[:success] = "Welcome back, " + user_params[:name] + "!"
+    if User.find_by(email: user_params[:email].strip)
+      @user = User.find_by(email: user_params[:email].strip)
+      @user.update_attributes(name: user_params[:name].strip.titleize)
+      flash[:success] = "Welcome back, " + user_params[:name].strip.titleize + "!"
     else
-      @user = User.create(user_params)
-      flash[:success] = "Hello, " + user_params[:name] + "!"
+      @user = User.create(name: user_params[:name].strip.titleize, email: user_params[:email].strip)
+      flash[:success] = "Hello, " + user_params[:name].strip.titleize + "!"
     end
     
-    redirect_to new_trip_path
+    redirect_to new_trip_path(user_id: @user.id, event_id: params[:user][:event_id])
   end
 
   def edit
@@ -29,6 +29,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :event_id)
   end
 end

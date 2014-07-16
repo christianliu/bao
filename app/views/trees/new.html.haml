@@ -1,0 +1,15 @@
+#container
+	%p 
+		I will donate $
+		%input.inline{type: "text", name: "amount", class: "number donate_money"}
+		toward
+
+		= form_for @tree do |f|
+			= f.number_field(:name, class: "inline number donate_tree", placeholder: '5')
+			%p trees.
+			= f.submit("Donate", class: "button")
+
+%script
+	$(".donate_money").keyup(function() {
+	$(".donate_tree").text( "hello" );
+	});
