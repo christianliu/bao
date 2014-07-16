@@ -39,6 +39,8 @@ function verifyEmail(){
 
 $(document).ready(function() {
 	$(".next").hide();
-	$("#user_name").keyup(verifyEmail);
-	$("#user_email").keyup(verifyEmail);
+	$("#user_name").bind("keyup paste click", verifyEmail);
+	$("#user_email").bind("keyup paste click", verifyEmail);
+
+
 });

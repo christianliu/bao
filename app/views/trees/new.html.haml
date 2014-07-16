@@ -11,10 +11,10 @@
 		= f.submit("Donate", class: "button")
 
 %script
-	$(".donate_money").bind("keyup paste", function() {
+	$(".donate_money").bind("keyup paste click", function() {
 	$(".donate_tree").val( $(this).val() / 12);
 	});
 
-	$(".donate_tree").bind("keyup paste", function() {
+	$(".donate_tree").bind("keyup paste click", function() {
 	$(".donate_money").val( $(this).val() * 12);
 	});
