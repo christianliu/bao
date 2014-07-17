@@ -12,6 +12,7 @@ class TripsController < ApplicationController
 
     @tree_amount = (@carbon / 1000).round(2)
     @money_amount = (@carbon * 12 / 1000).round(2)
-    redirect_to trip_path(user_id: params[:user_id], event_id: params[:event_id])
+
+    # trip_path(user_id: params[:user_id], event_id: params[:event_id])
   end
 end
