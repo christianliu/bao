@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'pry-debugger'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
@@ -29,6 +29,12 @@ gem 'spring',        group: :development
 
 # haml to replace erb
 gem "haml"
+
+# use authentication
+gem 'devise', '~> 3.2.4'
+
+# adminstrative side
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

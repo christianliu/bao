@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = "Hello, " + user_params[:name].strip.titleize + "!"
     end
     
-    redirect_to new_trip_path(user_id: @user.id, event_id: params[:id])
+    redirect_to new_trip_path(user_id: @user.id, event_id: params[:user][:event_id])
   end
 
   def edit
