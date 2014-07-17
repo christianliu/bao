@@ -12,3 +12,7 @@
 				= f.hidden_field(:event_id, value: params[:id])
 			#email_input_response
 
+%style
+	body {
+	background: url(#{Event.find(params[:id]).attachment})
+	}

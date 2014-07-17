@@ -10,9 +10,13 @@ class EventsController < ApplicationController
     @events = Event.where("name like ?", q).last(10)
   end
 
-  def new
+  def result
+    # total attendees
+    # total attendees who've taken the quiz
+    # total km travelled
+    # total trees purchased
+    # total pledges made
+    # total people who walked/biked
   end
 
-  def create
-  end
 end

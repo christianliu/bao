@@ -6,4 +6,11 @@
 			%li
 				= f.text_area(:about, placeholder: 'By November 18th, 2014, I pledge to plant 10 trees and...')
 			%li
+				= f.hidden_field(:user_id, value: params[:user_id])
+				= f.hidden_field(:event_id, value: params[:event_id])
 				= f.submit("I promise!", class: "button")
+
+%style
+	body {
+	background: url(#{Event.find(params[:event_id]).attachment})
+	}

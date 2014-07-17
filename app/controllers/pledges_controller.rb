@@ -5,6 +5,8 @@ class PledgesController < ApplicationController
 
   def create
   	@pledge = Pledge.create(pledge_params)
+
+    redirect_to Event.find(params[:pledge][:event_id])
   end
 
   private

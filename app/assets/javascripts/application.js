@@ -41,6 +41,4 @@ $(document).ready(function() {
 	$(".next").hide();
 	$("#user_name").bind("keyup paste click", verifyEmail);
 	$("#user_email").bind("keyup paste click", verifyEmail);
-
-
 });

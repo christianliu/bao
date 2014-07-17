@@ -48,3 +48,8 @@
 		$(".bus_b").click(function(){ $(".bus").slideToggle(); });
 		$(".train_b").click(function(){ $(".train").slideToggle(); });
 		$(".plane_b").click(function(){ $(".plane").slideToggle(); });
+
+%style
+	body {
+	background: url(#{Event.find(params[:event_id]).attachment})
+	}

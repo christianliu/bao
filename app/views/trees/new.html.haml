@@ -1,6 +1,6 @@
 #container
 	%h1 Give a tree
-
+	
 	= form_for @tree do |f|
 		%p 
 			I will donate $
@@ -8,6 +8,8 @@
 			toward
 			= f.number_field(:name, class: "donate_tree", placeholder: '2', step: 0.1)
 			trees.
+			= f.hidden_field(:user_id, value: params[:user_id])
+			= f.hidden_field(:event_id, value: params[:event_id])
 		= f.submit("Donate", class: "button")
 
 %script
@@ -18,3 +20,8 @@
 	$(".donate_tree").bind("keyup paste click", function() {
 	$(".donate_money").val( ($(this).val() * 12).toFixed(1) );
 	});
+
+%style
+	body {
+	background: url(#{Event.find(params[:event_id]).attachment})
+	}
