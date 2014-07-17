@@ -3,7 +3,7 @@ class Trip < ActiveRecord::Base
 	belongs_to :event
 
 	# updates the trip's carbon field and returns the carbon amount
-	def calculate_carbon(car_km, car_people, bus_km, bus_people, plane_hours, train_km)
+	def calculate_trip_info(car_km, car_people, bus_km, bus_people, plane_hours, train_km)
 		carbon = 0
 	    # binding.pry
 	    # car
@@ -27,8 +27,10 @@ class Trip < ActiveRecord::Base
 	    # train
 	    carbon += (train_km * 0.5)
 
-		self.update_attributes(carbon: carbon)
-		carbon
+		km = car_km + bus_km + train_km + 850*plane_hours
+
+		self.update_attributes(carbon: carbon, km_travelled: km)
+		[carbon, km]
 	end
 
 end

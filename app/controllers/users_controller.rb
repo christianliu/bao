@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  def index
-  end
-
   def new
+      @event = Event.find(params[:id])
+      @user = User.new
   end
 
   def create
@@ -16,15 +15,6 @@ class UsersController < ApplicationController
     end
     
     redirect_to new_trip_path(user_id: @user.id, event_id: params[:user][:event_id])
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private

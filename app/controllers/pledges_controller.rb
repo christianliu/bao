@@ -11,6 +11,6 @@ class PledgesController < ApplicationController
 
   private
   def pledge_params
-  	params.require(:pledge).permit(:about, :user_id)
+  	params.require(:pledge).permit(:about, :user_id, :event_id)
   end
 end

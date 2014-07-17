@@ -11,6 +11,6 @@ class TreesController < ApplicationController
 
   private
   def tree_params
-  	params.require(:tree).permit(:name, :user_id)
+  	params.require(:tree).permit(:rand_given, :user_id, :event_id)
   end
 end

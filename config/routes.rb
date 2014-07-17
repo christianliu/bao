@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   root "events#index"
-  get "events/result" => "events#result"
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  get 'events/:id/users/new' => 'users#new'
   resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :events, only: [:index, :new, :create, :show]
   resources :trips, only: [:index, :new, :create]

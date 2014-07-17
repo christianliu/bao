@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717154552) do
+ActiveRecord::Schema.define(version: 20140717230418) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140717154552) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "event_id"
   end
 
   create_table "trees", force: true do |t|
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140717154552) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rand_given"
+    t.integer  "event_id"
   end
 
   create_table "trips", force: true do |t|
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(version: 20140717154552) do
     t.integer  "carbon"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "km_travelled"
   end
 
   create_table "users", force: true do |t|

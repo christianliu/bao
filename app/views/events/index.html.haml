@@ -11,7 +11,7 @@
 			- @events.each do |event|
 				
 				%li 
-					= link_to(event.name, event)
+					= link_to(event.name, "/events/#{event.id}/users/new")
 					#{event.start_date}
 
 / %style

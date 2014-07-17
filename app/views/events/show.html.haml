@@ -1,17 +1,15 @@
 #container
 	%h1= @event.name
-	%p= @event.about
-	
-	= form_for @user do |f|
-		%ul
-			%li
-				= f.text_field(:name, autofocus: true, placeholder: 'Name')
-			%li
-				= f.email_field(:email, placeholder: 'Email')
-			%li
-				= f.hidden_field(:event_id, value: params[:id])
-			#email_input_response
 
+	%ul
+		%li #{@total_users} people have completed this survey
+		%li #{@total_carbon} tonnes of carbon have been used
+		%li #{@total_km} km have been travelled
+		%li #{@total_trees} trees have been donated
+		%li #{@total_pledge} pledges have been made
+
+	=link_to("Calculate again", "/events/#{@event.id}/users/new")
+	
 %style
 	body {
 	background: url(#{Event.find(params[:id]).attachment})
