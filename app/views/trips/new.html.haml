@@ -1,7 +1,11 @@
 #container
 	.notice= flash[:success]
 
-	%p Describe your trip to #{Event.find(params[:event_id]).name}
+	- if (Event.find(params[:event_id]).name == "")
+		%p Describe your trip
+	- else
+		%p Describe your trip to #{Event.find(params[:event_id]).name}
+
 	%button.transport_button.car_b Car
 	%button.transport_button.bus_b Truck/Bus
 	%button.transport_button.train_b Train

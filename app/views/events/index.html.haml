@@ -3,12 +3,13 @@
 	%p Welcome to Greenpop's Travel for Trees Carbon Calculator. Find your event or calculate without one.
 	%ul
 		= form_tag(events_path, method: 'get') do
-			%li= link_to("Calculate without an event", "events/1")
-			%li= search_field_tag("event_search", params[:event_search], :placeholder =>"Search...")
+			%li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search...")
 			%li= submit_tag("Go", class: "button")
-			
 	%ul
-	- @events.each do |event|
-		%li 
-			= link_to(event.name, event)
-			#{event.start_date}
+		%li= link_to("Calculate without an event", "events/1")
+		- if params[:event_search]
+			- @events.each do |event|
+				
+				%li 
+					= link_to(event.name, event)
+					#{event.start_date}
