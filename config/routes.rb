@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'events/:id/users/new' => 'users#new'
-  resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :events, only: [:index, :new, :create, :show]
-  resources :trips, only: [:index, :new, :create]
+  resources :users, only: [:new, :create]
+  resources :events, only: [:index, :show]
+  resources :trips, only: [:new, :create]
   resources :trees, only: [:new, :create]
   resources :pledges, only: [:new, :create]
  
