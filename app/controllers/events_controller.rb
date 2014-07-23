@@ -16,6 +16,9 @@ class EventsController < ApplicationController
     @total_km = info[2]
     @total_trees = info[3]
     @total_pledge = info[4]
+
+    # @grammar = [info[0] == 1, info[1] == 1, info[2] == 1, info[3] == 1, info[4] == 1].map { |value| value ? "has" : "have" }
+  
   end
 
 end
