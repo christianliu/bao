@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get 'events/:id/users/new' => 'users#new'
-  resources :users, only: [:new, :create]
+  resources :events do 
+    resources :users, only: [:new, :create]
+    resources :trips, only: [:new, :create]
+    resources :trees, only: [:new, :create]
+  end
+
   resources :events, only: [:index, :show]
-  resources :trips, only: [:new, :create]
-  resources :trees, only: [:new, :create]
   resources :pledges, only: [:new, :create]
  
   # The priority is based upon order of creation: first created -> highest priority.

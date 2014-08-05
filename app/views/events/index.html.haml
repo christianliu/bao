@@ -1,3 +1,4 @@
+= image_tag "home.jpg", class: "bg-img"
 #container	
 	%h1 Hi there!
 	%p Welcome to Greenpop's Travel for Trees Carbon Calculator. Find your event or calculate without one.
@@ -11,7 +12,7 @@
 			- @events.each do |event|
 				
 				%li 
-					= link_to(event.name, "/events/#{event.id}/users/new")
+					= link_to(event.name, new_event_user_path(event))
 					#{event.start_date}
 
 / %style

@@ -1,4 +1,6 @@
 class TreesController < ApplicationController
+  before_action :set_event, only: [:new, :create]
+
   def new
     @tree = Tree.new
   end
@@ -11,6 +13,10 @@ class TreesController < ApplicationController
 
   private
   def tree_params
-  	params.require(:tree).permit(:rand_given, :user_id, :event_id)
+  	params.require(:tree).permit(:rand_given, :user_id)
+  end
+
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 end

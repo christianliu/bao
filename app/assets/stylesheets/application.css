@@ -30,7 +30,7 @@
 
 h1 {
 	font-family: 'Arvo', serif;
-	font-size: 80px;
+	font-size: 40px;
 	margin: 0;
 }
 
@@ -77,4 +77,13 @@ input[type=number] {
 }
 .button:focus {
 	outline: none;
+}
+
+.bg-img {
+  position: fixed; left: 0; top: 0;
+  min-width: 100%; min-height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: auto; height: auto; z-index: -100;
 }
