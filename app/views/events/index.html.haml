@@ -14,8 +14,3 @@
 				%li 
 					= link_to(event.name, new_event_user_path(event))
 					#{event.start_date}
-
-/ %style
-/ 	body {
-/ 	background: url(<%= Event.find(params[:event_id]).attachment %>)
-/ 	}

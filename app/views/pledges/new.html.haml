@@ -1,3 +1,4 @@
+= image_tag "home.jpg", class: "bg-img"
 #container
 	%h1 Make a pledge
 
@@ -9,8 +10,3 @@
 				= f.hidden_field(:user_id, value: params[:user_id])
 				= f.hidden_field(:event_id, value: params[:event_id])
 				= f.submit("I promise!", class: "button")
-
-%style
-	body {
-	background: url(#{Event.find(params[:event_id]).attachment})
-	}
