@@ -6,6 +6,7 @@ class Price
   end
 
   def to_s
-    "$" + "%.2f" % amount.round(2)
+
+    "R" + amount.round.to_s
   end
 end

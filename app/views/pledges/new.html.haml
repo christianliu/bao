@@ -1,12 +1,10 @@
-= image_tag "home.jpg", class: "bg-img"
+= image_tag @event.background.url, class: "bg-img"
 #container
-	%h1 Make a pledge
+	%h1 My Green Pledge
 
-	= form_for @pledge do |f|
+	= form_for @pledge, url: event_pledges_path(@event) do |f|
 		%ul
 			%li
-				= f.text_area(:about, placeholder: 'By November 18th, 2014, I pledge to plant 10 trees and...')
+				= f.text_area(:about, placeholder: "By #{1.month.from_now.strftime("%B%e, %Y")} I pledge to plant 3 trees and...")
 			%li
-				= f.hidden_field(:user_id, value: params[:user_id])
-				= f.hidden_field(:event_id, value: params[:event_id])
-				= f.submit("I promise!", class: "button")
+				= f.submit("I commit!", class: "button")

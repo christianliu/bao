@@ -7,8 +7,7 @@ class TreesController < ApplicationController
 
   def create
     @tree = Tree.create(tree_params)
-
-    redirect_to Event.find(params[:tree][:event_id])
+    redirect_to @event
   end
 
   private

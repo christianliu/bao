@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804124232) do
+ActiveRecord::Schema.define(version: 20140806115837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(version: 20140804124232) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "cars", force: true do |t|
+    t.string "size"
+    t.float  "carbon_per_km"
+  end
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.text     "about"
@@ -61,6 +66,12 @@ ActiveRecord::Schema.define(version: 20140804124232) do
     t.string   "background_content_type"
     t.integer  "background_file_size"
     t.datetime "background_updated_at"
+  end
+
+  create_table "flights", force: true do |t|
+    t.string  "origin"
+    t.integer "distance"
+    t.float   "carbon_per_km"
   end
 
   create_table "pledges", force: true do |t|

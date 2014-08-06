@@ -8,11 +8,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.create(user_id: @user.id, event_id: params[:event_id])
-    @trip.set_carbon(params)
-    # @km = info[1]
-    # binding.pry
-    @tree_amount = (@trip.carbon / 1000).round(2)
-    @money_amount = (@tree_amount * 12).round(2)
+    @trip.set_carbon_and_km(params)
+    @money_amount = (@trip.carbon * 120 / 1000).round
   end
 
   private 

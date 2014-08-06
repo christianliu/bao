@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create]
     resources :trips, only: [:new, :create]
     resources :trees, only: [:new, :create]
+    resources :pledges, only: [:new, :create]
   end
 
   resources :events, only: [:index, :show]
-  resources :pledges, only: [:new, :create]
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

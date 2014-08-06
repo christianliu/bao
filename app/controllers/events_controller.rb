@@ -1,21 +1,19 @@
 class EventsController < ApplicationController
   def index
     # @events = Event.all
-    q = "%#{params[:event_search]}%"
-    @events = Event.where("name like ?", q).last(10)
+    if params[:event_search].present?
+      q = "%#{params[:event_search]}%"
+      @events = Event.where("name iLIKE ?", q).last(10)
+    end
   end
 
   def show
-    # total attendees
-    # total people who walked/biked
-
     @event = Event.find(params[:id])
-    info = @event.get_info
-    @total_users = info[0]
-    @total_carbon = info[1]
-    @total_km = info[2]
-    @total_trees = info[3]
-    @total_pledge = info[4]
+    @total_trips = @event.trips.count
+    @total_carbon = @event.total(:carbon)
+    @total_km = @event.total(:km_travelled)
+    # @total_trees = @event.total_trees
+    @total_pledge = @event.pledges.count
   end
 
 end

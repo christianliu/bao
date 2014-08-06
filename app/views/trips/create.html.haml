@@ -1,10 +1,10 @@
 = image_tag @event.background.url, class: "bg-img"
 #container
-	%p 
-		We recommend that you donate 
-		%span= Price.new(@money_amount).to_s
-		to compensate for your travels.
-
-	=link_to("Give a tree", new_event_tree_path)
+	#money-message
+		According to our calculations, you could GreenUp your travels by contributing
+		#money-amount= Price.new(@money_amount).to_s
+		towards green projects.
+  
+	=link_to("Contribute towards planting a tree", new_event_tree_path(@event, amount: @money_amount))
 	%br
-	=link_to("Make a pledge", new_pledge_path(user_id: params[:user_id], event_id: params[:event_id]))
+	=link_to("Make your own green pledge", new_event_pledge_path(@event))

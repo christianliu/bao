@@ -1,12 +1,11 @@
-= image_tag "home.jpg", class: "bg-img"
+= image_tag @event.background.url, class: "bg-img"
 #container
 	%h1= @event.name
 
 	%ul
-		%li #{@total_users} people have completed this survey
-		%li #{@total_carbon} tonnes of carbon have been used
+		%li #{@total_trips} people have completed this survey
+		%li #{@total_carbon} kg of carbon were emitted
 		%li #{@total_km} km have been travelled
-		%li #{@total_trees} trees have been donated
 		%li #{@total_pledge} pledges have been made
 
 	=link_to("Calculate again", "/events/#{@event.id}/users/new")

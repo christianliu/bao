@@ -8,3 +8,20 @@ $(function() {
   $(".plane_b").click(function(){ $(".plane").slideToggle(); $(this).toggleClass('active'); });
 });
     
+function oneCarParamPresent() {
+  return $('#car_km').val() != "" || $('#car_people').val() != "" || $('#car_id').val() != "";
+}
+
+function oneCarParamAbsent() {
+  return $('#car_km').val() == "" || $('#car_people').val() == "" || $('#car_id').val() == "";
+}
+
+$( document ).ready(function() {
+  $('#trip-form').submit(function(e) {
+    if (oneCarParamPresent() && oneCarParamAbsent()) {
+      alert("Please fill out all the car attributes.");
+      e.preventDefault(); 
+    }
+    
+  });
+});

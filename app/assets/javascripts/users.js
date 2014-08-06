@@ -1,25 +1,25 @@
-function verifyEmail(){
-  var user_name = $("#user_name").val();
-  var user_email = $("#user_email").val();
+function checkInput(){
+  var name = $("#user_name").val();
+  var email = $("#user_email").val();
   
-  // variables to check email validity 
-  var atpos = user_email.indexOf("@");
-    var dotpos = user_email.lastIndexOf(".");
-
   // Verify name field isn't blank
-  if(user_name == null || user_name == "") {
-    $("#email_input_response").html('Please tell us your name.');
-  // Verify email valid
-  } else if(atpos< 1 || dotpos<atpos+2 || dotpos+2>=user_email.length) {
-        $("#email_input_response").html('Please enter your valid email address.');
-    // Old User
-    } else {
-      $("#email_input_response").html('<input class="button" name="commit" type="submit" value="Get Started >>">');
+  if(name == null || name == "") {
+    $("#email_input_response").html();
+  }// Verify email valid
+  else if(!validateEmail(email)) {
+    $("#email_input_response").html('Please enter your valid email address.');
+  } // Old User
+  else {
+    $("#email_input_response").html('<input class="button" name="commit" type="submit" value="Get Started >>">');
   }
 }
 
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
+
 $(document).ready(function() {
-  $(".next").hide();
-  $("#user_name").bind("keyup paste click", verifyEmail);
-  $("#user_email").bind("keyup paste click", verifyEmail);
+  $("#user_name").bind("keyup paste click", checkInput);
+  $("#user_email").bind("keyup paste click", checkInput);
 });
