@@ -21,8 +21,3 @@
 	$(".donate_tree").bind("keyup paste click", function() {
 	$(".donate_money").val( ($(this).val() * 12).toFixed(1) );
 	});
-
-%style
-	body {
-	background: url(#{Event.find(params[:event_id]).attachment})
-	}
