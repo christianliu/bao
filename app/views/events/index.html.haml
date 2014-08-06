@@ -6,7 +6,7 @@
     = form_tag(events_path, method: 'get') do
       %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
   %ul
-    - if @events.any?
+    - if @events.try(:any?)
       %h2 Search Results
       - @events.each do |event| 
         %li 
