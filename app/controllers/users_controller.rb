@@ -8,9 +8,6 @@ class UsersController < ApplicationController
     @user = User.find_by(email: user_params[:email])
     unless @user
       @user = User.create(user_params)
-
-      # flash[:success] = "Welcome back, " + user_params[:name].strip.titleize + "!"
-      # flash[:success] = "Hello, " + user_params[:name].strip.titleize + "!"
     end
     session[:user_id] = @user.id
     redirect_to new_event_trip_path

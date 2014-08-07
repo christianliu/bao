@@ -79,16 +79,25 @@ textarea {
 	font-family: 'Arvo', serif;
 	font-size: 25px;
 	cursor: pointer;
-	border: none;
+	border: thin solid black;
 	text-decoration:none;
-	margin-top: 25px
-}
-.button:active {
-	position:relative;
-	top:1px;
-}
-.button:focus {
-	outline: none;
+  border-radius: 8px;
+  padding: 20px;
+	margin-top: 25px;
+
+  &:active {
+    position:relative;
+    top:1px;
+  }
+
+  &:focus {
+    outline: none;  
+  }
+
+  &:hover {
+    background-color: #eee;
+    transition: 0.3;
+  }
 }
 
 .bg-img {

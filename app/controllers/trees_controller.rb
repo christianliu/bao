@@ -7,7 +7,8 @@ class TreesController < ApplicationController
 
   def create
     @tree = Tree.create(tree_params)
-    redirect_to @event
+    redirect_to @event, notice: "An email is waiting in your inbox thanking you for your contribution. You're tree-mendous!"
+
   end
 
   private
