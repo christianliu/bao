@@ -83,7 +83,8 @@ textarea {
 	text-decoration:none;
   border-radius: 8px;
   padding: 20px;
-	margin-top: 25px;
+	margin: 10px;
+  color: black;
 
   &:active {
     position:relative;
@@ -107,4 +108,19 @@ textarea {
   background-position: center center;
   background-repeat: no-repeat;
   width: auto; height: auto; z-index: -100;
+}
+
+.notice {
+  background-color: #c6f3c5;
+  color: green;
+  border: thin solid green;
+  padding: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.small {
+  font-size: 16px;
+  padding: 10px;
 }

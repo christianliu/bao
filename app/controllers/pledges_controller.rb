@@ -6,13 +6,13 @@ class PledgesController < ApplicationController
   end
 
   def create
-  	@pledge = Pledge.create(pledge_params)
-    redirect_to @event
+  	@pledge = Pledge.create(pledge_params.merge({user_id: session[:user_id], event_id: @event.id}))
+    redirect_to @event, notice: "An email is waiting in your inbox thanking you for your pledge. You're tree-mendous!"
   end
 
   private
   def pledge_params
-  	params.require(:pledge).permit(:about, :user_id, :event_id)
+  	params.require(:pledge).permit(:about)
   end
 
   def set_event

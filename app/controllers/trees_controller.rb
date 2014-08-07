@@ -6,14 +6,13 @@ class TreesController < ApplicationController
   end
 
   def create
-    @tree = Tree.create(tree_params)
+    @tree = Tree.create(tree_params.merge({user_id: session[:user_id], event_id: @event.id}))
     redirect_to @event, notice: "An email is waiting in your inbox thanking you for your contribution. You're tree-mendous!"
-
   end
 
   private
   def tree_params
-  	params.require(:tree).permit(:rand_given, :user_id)
+  	params.require(:tree).permit(:rand_given)
   end
 
   def set_event
