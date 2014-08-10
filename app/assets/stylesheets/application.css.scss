@@ -1,3 +1,5 @@
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,6 +15,7 @@
  *= require_tree .
  *= require_self
  */
+
 
 /*all text*/
 * {
@@ -47,8 +50,13 @@ ul {
     list-style-type: none;
 }
 
-span {
-	font-size: 35px;
+#money-amount {
+	font-size: 50px;
+}
+
+#money-message {
+  margin: 20px;
+  font-size: 22px;
 }
 
 input {
@@ -61,6 +69,10 @@ input {
 
 input[type=number] {
 	width: 90px;
+}
+
+textarea {
+  padding: 5px;
 }
 
 .button {

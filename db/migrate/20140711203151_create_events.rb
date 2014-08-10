@@ -5,7 +5,6 @@ class CreateEvents < ActiveRecord::Migration
       t.text :about
       t.date :start_date
       t.date :end_date
-      t.integer :owner_id
       
       t.timestamps
     end

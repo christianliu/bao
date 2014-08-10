@@ -1,3 +1,4 @@
+= image_tag @event.background.url, class: "bg-img"
 #container
 	%h1= @event.name
 
@@ -9,8 +10,3 @@
 		%li Pledges made: #{@total_pledge}
 
 	=link_to("Calculate again", "/events/#{@event.id}/users/new")
-	
-%style
-	body {
-	background: url(#{Event.find(params[:id]).attachment})
-	}

@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
+ruby "2.1.1"
 
 gem 'pry-debugger'
+gem 'quiet_assets'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -17,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -34,7 +37,12 @@ gem 'devise', '~> 3.2.4'
 # adminstrative side
 gem 'activeadmin', github: 'gregbell/active_admin'
 # file attachment
-gem 'carrierwave'
+# gem 'carrierwave'
+gem 'paperclip', "~> 4.1"
+
+gem 'puma'
+
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

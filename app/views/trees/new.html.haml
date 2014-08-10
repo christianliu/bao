@@ -1,27 +1,11 @@
+= image_tag @event.background.url, class: "bg-img"
 #container
-	%h1 Give a tree
+	%h1 It's a Treevolution, help us plant!
 	
-	= form_for @tree do |f|
+	= form_for @tree, url: event_trees_path(@event) do |f|
 		%p 
-			I will donate $
-			%input.inline{type: "number", name: "amount", class: "donate_money", placeholder: '24', step: 0.1}
-			toward
-			= f.number_field(:rand_given, class: "donate_tree", placeholder: '2', step: 0.1)
-			trees.
-			= f.hidden_field(:user_id, value: params[:user_id])
-			= f.hidden_field(:event_id, value: params[:event_id])
+			I'll donate R
+			= f.number_field :rand_given, class: "donate_money inline", placeholder: params[:amount] 
+			towards tree planting in southern Africa
 		= f.submit("Donate", class: "button")
 
-%script
-	$(".donate_money").bind("keyup paste click", function() {
-	$(".donate_tree").val( ($(this).val() / 12).toFixed(1) );
-	});
-
-	$(".donate_tree").bind("keyup paste click", function() {
-	$(".donate_money").val( ($(this).val() * 12).toFixed(1) );
-	});
-
-%style
-	body {
-	background: url(#{Event.find(params[:event_id]).attachment})
-	}
