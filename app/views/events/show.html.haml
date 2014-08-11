@@ -9,4 +9,4 @@
     %li #{@total_km} km have been travelled
     %li #{@total_pledge} pledges have been made
   %br
-  =link_to("Calculate again", "/events/#{@event.id}/users/new", class: "button")
+  =link_to("Calculate again", new_event_user_path(@event), class: "button")
