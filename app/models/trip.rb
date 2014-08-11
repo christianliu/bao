@@ -22,10 +22,12 @@ class Trip < ActiveRecord::Base
     end
 
     # bus
-    carbon += params[:bus_km].to_i * 0.109 if params[:bus_km].present?
+    bus_carbon_per_km = Variable.get("bus_carbon_per_km")
+    carbon += params[:bus_km].to_i * bus_carbon_per_km if params[:bus_km].present?
 
     # train
-    carbon += params[:train_km].to_i * 0.047 if params[:train_km].present?
+    train_carbon_per_km = Variable.get("train_carbon_per_km")
+    carbon += params[:train_km].to_i * train_carbon_per_km if params[:train_km].present?
 
 		self.update_attributes(carbon: carbon, km_travelled: total_km)
 	end

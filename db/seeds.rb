@@ -33,3 +33,12 @@ cars.each do |car|
     c.carbon_per_km = car[1]
   end
 end
+
+variables = [["train_carbon_per_km", 0.047], ["bus_carbon_per_km", 0.109]]
+
+variables.each do |variable|
+  Variable.where(name: variable[0]).first_or_create! do |v|
+    v.name = variable[0]
+    v.value = variable[1]
+  end
+end
