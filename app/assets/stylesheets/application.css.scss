@@ -124,3 +124,28 @@ textarea {
   font-size: 16px;
   padding: 10px;
 }
+
+.tip {
+  float: right;
+  background-color: white;
+  height: 60px;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.train .tip {
+  width: 300px;
+}
+
+.bus .tip {
+  width: 400px;
+}
+
+.car .tip {
+  width: 200px;
+}
+
+
+
+
+
