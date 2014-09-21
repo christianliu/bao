@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20140811134412) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "attachment"
     t.string   "background_file_name"
     t.string   "background_content_type"
     t.integer  "background_file_size"

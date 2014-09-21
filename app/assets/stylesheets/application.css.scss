@@ -16,6 +16,17 @@
  *= require_self
  */
 
+/*Color*/
+.green{color:#96D437;}
+
+.white{color:white;}
+
+.black{color:black;}
+
+.grey{color:#323533;}
+
+.lightgrey{color:#C9CCCB;}
+
 
 /*all text*/
 * {
@@ -24,21 +35,27 @@
 
 /*white overlay on all pages*/
 #container {
+  width:1000px;
+  height:450px;
+  position: relative;
 	text-align: center;
-	margin: 8%;
-	padding: 35px;
+	margin: 8% auto;
+/*	padding: 35px;*/
 	background-color: white;
-	opacity: .97;
+	opacity: .90;
+
 }
 
 h1 {
 	font-family: 'Arvo', serif;
-	font-size: 40px;
+	font-size: 48px;
 	margin: 0;
 }
 
 p {
-	padding: 10px;
+  font-size: 16px;
+  margin: 0;
+	/*padding: 10px;*/
 }
 
 a {
