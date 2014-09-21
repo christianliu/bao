@@ -10,10 +10,13 @@
         %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
     %ul
       - if @events.try(:any?)
-        %h3 Search Results
+        %h2.start  &nbsp; Get Started &nbsp;
+        %h2.start  &nbsp; &#8594; &nbsp;
+        / %h3 Search Results
         - @events.each do |event| 
-          %li 
+          %span.start
             = link_to(event.name, new_event_user_path(event))
+          
       - elsif params[:event_search]
         %h3 No Events Found
   
