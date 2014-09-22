@@ -10,6 +10,17 @@ body {
 
 
 /*INDEX*/
+#indexcontainer{
+  width:1000px;
+  height:450px;
+  position: relative;
+  text-align: center;
+  margin: 8% auto;
+/*  padding: 35px;*/
+  background-color: white;
+  opacity: .90;
+}
+
 #green-wrapper{
 	width:50%;
 	height:70%;
@@ -114,6 +125,14 @@ body {
     font-size: 400%;
     font-weight: 800;
 /*    margin-top: 2em;*/
+}
+
+h1.white{
+  font-size:48px
+}
+
+p.white{
+  padding:0;
 }
 
 .h1.outline.grey{
