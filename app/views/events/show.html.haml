@@ -1,9 +1,9 @@
 = image_tag @event.background.url, class: "bg-img"
-#container
+#container.grey
   - if flash[:notice]
     .notice= flash[:notice]
-  %h1= @event.name
-  %ul
+  %h1.green= @event.name
+  %ul.white
     %li #{@total_trips} people have completed this survey
     %li #{@total_carbon} kg of carbon were emitted travelling here
     %li #{@total_km} km have been travelled

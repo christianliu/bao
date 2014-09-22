@@ -46,10 +46,16 @@ body {
 	text-align: left;
 }
 
-#caption-wrapper h1, h2{
+#caption-wrapper h1{
 	padding: 0;
 	margin: 0;
 }
+
+#caption-wrapper h2{
+  padding: 0;
+  margin: 0;
+}
+
 
 #caption-wrapper h2{
 	font-size: 300%;
@@ -141,5 +147,22 @@ p.white{
 
 input#event_search{
 	font-size:28px;
+}
+
+h2.start{
+  position: relative;
+  display: inline;
+  color: black;
+  background-color: yellow;
+  border-radius: 0.3em;
+  padding: 0.1em;
+  margin-top: 1em;
+}
+
+span.start{
+  text-align: right;
+  font-size: 1.4em;
+  font-weight: 800;
+  z-index: 99;
 }
 

@@ -1,9 +1,9 @@
 = image_tag @event.background.url, class: "bg-img"
-#container
-	%h1 It's a Treevolution, help us plant!
+#container.grey
+	%h1.green It's a Treevolution, help us plant!
 	
 	= form_for @tree, url: event_trees_path(@event) do |f|
-		%p 
+		%p.white 
 			I'll donate R
 			= f.number_field :rand_given, class: "donate_money inline", value: params[:amount] 
 			towards tree planting in southern Africa
