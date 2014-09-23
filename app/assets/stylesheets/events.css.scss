@@ -82,14 +82,21 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 10%; /* Width of new image */
-  height: 10%; /* Height of new image */
+  height: 12%; /* Height of new image */
   right: 0;
   top: 45%;
-  margin-top: 1em;
+  margin-top: 0.6em;
   margin-right: 1em;
   margin-left: 1em;
   z-index: 99;
 }
+
+.banner1 {
+  width: 16%; /* Width of new image */
+  height: 12%; /* Height of new image */
+}
+
+
 
 .logo{
   position: relative;
@@ -114,7 +121,7 @@ body {
   width: 15%; /* Width of new image */
   height: 35%; /* Height of new image */
   right: 0;
-  top: 46%;
+  top: 45%;
   margin-top: 1em;
   margin-right: 1.5em;
   margin-left: 1.5em;
