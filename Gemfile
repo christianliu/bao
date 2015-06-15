@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.1.1"
+ruby "2.1.2"
 
-gem 'pry-debugger'
+gem 'pry'
+# gem 'pry-debugger'
 gem 'quiet_assets'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

@@ -18,7 +18,8 @@
 				%li= label_tag(:car_people, "Number of people in the car: ")
 				%li= number_field_tag(:car_people)
 			%ul.question
-				%li= select_tag(:car_id, options_for_select(Car.select), prompt: "Car Size")
+				%li= label_tag(:car_id, "Car Type:")
+				%li= select_tag(:car_id, options_for_select(Car.select), prompt: "Select a size")
 		.transport.bus
 			.tip You're awesome!  "A devel­oped coun­try is not a place where the poor have cars, but where the rich use pub­lic trans­port" ~ for­mer Mayor of Bogotá, Colombia.
 			%ul.question

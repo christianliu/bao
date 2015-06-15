@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  config.sort_order = 'created_at_asc'
 
   
   # See permitted parameters documentation:
@@ -13,5 +14,44 @@ ActiveAdmin.register User do
   #  permitted << :other if resource.something?
   #  permitted
   # end
+  index do |user|
+    column "Signed Up", sortable: :created_at do |u|
+      u.created_at.strftime("%B %e, %Y")
+    end
+    column :name
+    column :email
+    column "Distance Travelled (km)" do |user|
+      user.total(:km_travelled)
+    end
+    column "Carbon (kg)" do |user|
+      user.total(:carbon)
+    end
+    column "Donation (ZAR)" do |user|
+      user.total_donation
+    end
+    column "Pledges" do |user|
+      user.pledges_summary
+    end
+
+    actions
+  end
+
+  csv do
+    column :name
+    column :email
+    column "Distance Travelled (km)" do |user|
+      user.total(:km_travelled)
+    end
+    column "Carbon (kg)" do |user|
+      user.total(:carbon)
+    end
+    column "Donation (ZAR)" do |user|
+      user.total_donation
+    end
+    column "Pledges" do |user|
+      user.pledges_summary
+    end
+  end
+
   
 end

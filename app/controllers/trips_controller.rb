@@ -22,3 +22,5 @@ class TripsController < ApplicationController
     @user = User.find(session[:user_id])
   end
 end
+
+# casimir pulaski day

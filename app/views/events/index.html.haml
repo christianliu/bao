@@ -10,8 +10,8 @@
         %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
     %ul
       - if @events.try(:any?)
-        %h2.start  &nbsp; Get Started &nbsp;
-        %h2.start  &nbsp; &#8594; &nbsp;
+        %h2.start  &nbsp; Get Started &#8594; &nbsp;
+        &nbsp;
         / %h3 Search Results
         - @events.each do |event| 
           %span.start
